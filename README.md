@@ -1,32 +1,76 @@
-# React + TypeScript + Vite
+# TaskZen
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+TaskZen est une application de gestion personnelle des tâches et des projets. Elle combine organisation, suivi de progression et outils de concentration dans une interface React + TypeScript.
 
-Currently, two official plugins are available:
+## Fonctionnalités repérées dans le code
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Authentification avec écrans de connexion et d'inscription.
+- Tableau de bord et statistiques de tâches.
+- Création, modification, consultation et suppression logique des tâches.
+- Gestion de projets, tags, archives et corbeille.
+- Filtres et mode concentration.
+- Thème sombre.
+- Notifications, gamification et badges.
+- Export des données en JSON et CSV.
+- Outils complémentaires : exercice de respiration et assistant ZenBot.
 
-## React Compiler
+> Les fonctionnalités sont décrites à partir de la structure du code. Leur comportement complet, la sécurité de l'authentification et la persistance des données doivent être testés avant une mise en production.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack technique
 
-## Expanding the Oxlint configuration
+- React 19
+- TypeScript
+- Vite
+- Oxlint
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Prérequis
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- Node.js compatible avec la version de Vite utilisée
+- npm
+
+## Installation et lancement
+
+```bash
+git clone https://github.com/chris-dev47/taskzen.git
+cd taskzen
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Vite affiche dans le terminal l'adresse locale à ouvrir dans le navigateur.
+
+## Scripts
+
+| Commande | Utilité |
+|---|---|
+| `npm run dev` | Démarrer le serveur de développement |
+| `npm run build` | Vérifier les types TypeScript et construire l'application |
+| `npm run lint` | Analyser le code avec Oxlint |
+| `npm run preview` | Prévisualiser le build de production |
+
+## Organisation du code
+
+```text
+src/
+├── components/   # Authentification, tâches, projets et interface
+├── hooks/        # Logique métier et état applicatif
+├── types/        # Types TypeScript
+├── utils/        # Helpers, stockage et export
+├── App.tsx
+└── main.tsx
+public/
+package.json
+vite.config.ts
+```
+
+## Qualité et prochaines vérifications
+
+- Exécuter `npm run build` et `npm run lint`.
+- Vérifier le parcours d'inscription et de connexion.
+- Examiner la stratégie de stockage et la protection des données utilisateur.
+- Ajouter des tests automatisés sur les opérations critiques.
+- Documenter les limites connues et le déploiement.
+
+## Auteur
+
+[Chris-dev47](https://github.com/chris-dev47)
